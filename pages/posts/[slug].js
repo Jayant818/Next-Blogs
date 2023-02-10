@@ -17,12 +17,10 @@ function SinglePostPage(props) {
 
 export async function getServerSideProps(context) {
 	const { params } = context;
-	console.log("parameter", params);
 
 	const allPosts = getAllPost();
 
 	const selectedPost = allPosts.find((post) => post.slug === params.slug);
-	console.log("Selected Posts", selectedPost);
 
 	return {
 		props: {
